@@ -5,12 +5,12 @@ from PIL import Image, ImageChops
 
 # /home/fabricio_semmler/PycharmProjects/upload_image
 
-# Captures the absolute path to the image folder
+# Capture the absolute path to the image folder
 UPLOAD_FOLDER_OLD = os.path.abspath(__file__) + '/static/img'
 UPLOAD_FOLDER = UPLOAD_FOLDER_OLD.replace('/app.py', '')
 print(UPLOAD_FOLDER)
 
-# Establishes the extensions allowed by the application
+# Establish the extensions allowed by the application
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
@@ -36,7 +36,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            # Opens image, inverts its colors and saves the result
+            # Open image, invert its colors and save the result
             img = Image.open(os.path.join(app.config['UPLOAD_FOLDER'], filename)).convert('RGB')
             inv_img = ImageChops.invert(img)
             inv_img.save(os.path.join(app.config['UPLOAD_FOLDER'], 'inv_' + filename))
