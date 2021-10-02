@@ -1,31 +1,8 @@
-<!DOCTYPE html>
-
-<head>
-    <title>BMI Flask App</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-</head>
-
-<h1>BMI calculator!</h1>
-
-<body>
-
-    <div>
-        <p>Please enter your weight in kilograms and height in meters.</p>
-
-        <form class="pure-form" method="POST" action="/">
-        Weight: <br>
-        <input type="text" name="userweight"><br>
-        Height: <br>
-        <input type="text" name="userheight"><br>
-        <button type="submit" class="pure-button pure-button-primary" value="Submit">Submit</button>
-        </form>
-    </div>
-    <br>
-    <div>
-        {% if bmi %}
-            <p>Your calculated BMI is:  {{ bmi }}!</p>
-        {% endif %}
-    </div>
-
-</body>
+<!doctype html>
+<title>Upload Image</title>
+<h1>Upload Image</h1>
+<form method=post enctype=multipart/form-data>
+    <input type=file name=file>
+    <input type=submit value=Submit>
+</form>
+<h2>{{ message }}</h2>
