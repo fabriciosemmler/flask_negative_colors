@@ -1,0 +1,18 @@
+html {
+    background: #A3A3A3;
+    color: white;
+}
+
+h1 {
+    color: #1d78c3;
+}
+
+h1 {
+    text-align: center;
+}
+
+.paragraph {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: left;
+}
